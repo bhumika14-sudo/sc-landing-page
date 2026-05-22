@@ -1,0 +1,708 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --bg-main: #F0F4FF;
+    --primary: #5865F2;
+    --text-muted: #64748b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    line-height: 1.1;
+    word-break: break-word;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 80px;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 38px;
+    width: auto;
+}
+
+.logo-text {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.5px;
+    display: inline-block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.btn-pill {
+    background-color: white;
+    color: black;
+    padding: 13px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.btn-pill:hover {
+    background-color: #f0f0f0;
+}
+
+/* ── HERO ── */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 40px;
+    background-color: #f0f0ff;
+    position: relative;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid rgb(225, 198, 225);
+    border-radius: 100px;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 32px;
+}
+
+.hero h1 {
+    font-size: 4.4rem;
+    font-weight: 700;         
+    letter-spacing: -1.5px;    
+    color: black;
+    max-width: 1000px;
+    margin-bottom: 24px;
+    line-height: 1.08;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 650px;
+    margin-bottom: 56px;
+    font-weight: 400;
+}
+
+.hero-action {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.btn-cta {
+    background-color: black;
+    color: white;
+    border-radius: 100px;
+    text-decoration: none;
+    padding: 20px 48px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    gap: 12px;
+}
+
+.btn-cta:hover {
+    background-color: #333333;
+}
+
+.link-action {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* FIX 2: floating card with proper visible outline and shadow */
+.floating-card {
+    position: absolute;
+    width: 320px;
+    background-color: white;
+    padding: 14px;
+    border-radius: 36px;
+    border: 1px solid #d0d7f0;
+    box-shadow: 0 8px 40px rgba(88, 101, 242, 0.12), 0 2px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.floating-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 24px;
+    background-color: #e8eaf6;
+    display: block;
+}
+
+.card-left {
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid #d0d7f0;                                        
+    box-shadow: 0 8px 40px rgba(88, 101, 242, 0.12), 0 2px 12px rgba(0,0,0,0.08);  
+}
+
+.card-right {
+    right: 40px;
+    bottom: 15%;
+}
+
+/* ── FEATURES ── */
+.features {
+    padding: 120px 80px;
+    background-color: white;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 3.5rem;
+    margin-bottom: 60px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* FIX 3: cards now stand out from white background with shadow + colored border */
+.feature-card {
+    padding: 60px 40px;
+    border-radius: 40px;
+    background-color: white;
+    border: 1px solid #e0e4f5;
+    box-shadow: 0 4px 24px rgba(88, 101, 242, 0.08), 0 1px 6px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.feature-card:hover {
+    box-shadow: 0 8px 40px rgba(88, 101, 242, 0.15), 0 2px 12px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+}
+
+.f-icon-box {
+    width: 80px;
+    height: 80px;
+    background-color: #f0f2ff;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-size: 2.5rem;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    font-weight: 800;
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ── TEACHER / STUDENT FLOW ── */
+.teacher-flow {
+    padding: 100px 80px;
+    background-color: var(--bg-main);
+}
+
+.flow-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* FIX 4: heading first, then subtitle tag below it */
+.flow-section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.flow-section-header h2 {
+    font-size: 3.5rem;
+    margin-bottom: 16px;
+    color: black;
+}
+
+.flow-section-header .section-subtitle {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+.flow-step {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 100px;
+}
+
+.flow-content {
+    flex: 1;
+}
+
+/* FIX 1: step badge = blue line + STEP label side by side */
+.step-badge {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.step-line {
+    display: block;
+    width: 56px;
+    height: 4px;
+    background-color: var(--primary);
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.step-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+
+.flow-content h3 {
+    font-size: 2.4rem;          
+    margin-bottom: 20px;
+    color: black;
+    word-break: normal;        
+    overflow-wrap: break-word;
+    hyphens: none;
+}
+
+.flow-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+    max-width: 420px;
+}
+
+.flow-image {
+    flex: 1.4;
+    border-radius: 40px;
+    background-color: white;
+    border: 1px solid #e0e4f5;
+    box-shadow: 0 4px 24px rgba(88, 101, 242, 0.08), 0 1px 6px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.flow-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ── TECH STACK ── */
+.tech-stack {
+    padding: 80px 40px;
+    background-color: #7c4dff;
+    border-radius: 60px;
+    margin: 40px;
+    text-align: center;
+}
+
+.tech-stack h2 {
+    font-size: 3.5rem;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.tech-stack .section-tag {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.tech-card {
+    background-color: rgba(255, 255, 255, 0.12);
+    padding: 30px 20px;
+    border-radius: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.t-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background-color: white;
+    min-width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+.tech-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    color: white;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+}
+
+.tech-card p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.tech-tag {
+    display: inline-block;
+    background-color: #4BB786;
+    color: white;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* ── PURPLE CTA SECTION ── */
+.purple-section {
+    background-color: var(--primary);
+    color: white;
+    padding: 100px 80px;
+    text-align: center;
+    border-radius: 80px;
+    margin: 40px;
+}
+
+.purple-section h2 {
+    font-size: 2.8rem;
+    max-width: 700px;
+    margin: 0 auto 24px;
+    color: white;
+}
+
+.purple-section p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    opacity: 0.9;
+}
+
+.btn-white {
+    background-color: white;
+    color: var(--primary);
+    padding: 18px 40px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: inline-block;
+    border-radius: 100px;
+}
+
+.btn-white:hover {
+    background-color: #f0f0f0;
+}
+
+/* ── FOOTER ── */
+.main-footer {
+    padding: 80px 80px 40px;
+    background-color: black;
+    color: white;
+    border-top: 1px solid #333333;
+}
+
+.main-footer .footer-grid {
+    display: grid;
+    gap: 80px;
+    margin: 0 auto 80px;
+    max-width: 1200px;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+}
+
+.footer-brand .logo {
+    margin-bottom: 24px;
+}
+
+.footer-brand p {
+    color: #cccccc;
+    font-size: 1rem;
+    max-width: 320px;
+    line-height: 1.6;
+}
+
+.footer-brand .logo-text {
+    color: white;
+}
+
+.footer-links h4 {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 32px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 16px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #cccccc;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333333;
+    padding-top: 24px;
+}
+
+.footer-bottom p {
+    color: #999999;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 8px 16px;
+    }
+
+    .logo img {
+        height: 28px;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .btn-pill {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        padding: 60px 16px;
+    }
+
+    .hero h1 {
+        font-size: 2.6rem;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .btn-cta {
+        width: 100%;
+        justify-content: center;
+        padding: 16px;
+        font-size: 1rem;
+    }
+
+    .link-action {
+        font-size: 0.9rem;
+    }
+
+    .floating-card {
+        display: none;
+    }
+
+    .features {
+        padding: 60px 16px;
+    }
+
+    .features h2 {
+        font-size: 2.2rem;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .feature-card {
+        padding: 32px 24px;
+        border-radius: 24px;
+    }
+
+    .tech-stack {
+        padding: 60px 16px;
+        margin: 20px;
+        border-radius: 30px;
+    }
+
+    .tech-stack h2 {
+        font-size: 2rem;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .tech-card {
+        padding: 20px;
+    }
+
+    .teacher-flow {
+        padding: 60px 16px;
+    }
+
+    .flow-section-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .flow-section-header {
+        margin-bottom: 48px;
+    }
+
+    .flow-step {
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 60px;
+    }
+
+    .flow-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .flow-content p {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .flow-image {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .purple-section {
+        padding: 60px 16px;
+        margin: 20px;
+        border-radius: 30px;
+    }
+
+    .purple-section h2 {
+        font-size: 2rem;
+    }
+
+    .btn-white {
+        width: 100%;
+        padding: 16px;
+        text-align: center;
+    }
+
+    .main-footer {
+        padding: 60px 16px 30px;
+    }
+
+    .main-footer .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+}
