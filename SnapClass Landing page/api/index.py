@@ -29,4 +29,3 @@ def serve_static(path):
 @app.errorhandler(404)
 def handle_404(e):
     return render_template('index.html'), 200
-
