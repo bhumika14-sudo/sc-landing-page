@@ -1,7 +1,7 @@
 {
-  "version": 2,
+  "outputDirectory": ".",
   "routes": [
     { "src": "/static/(.*)", "dest": "/static/$1" },
-    { "src": "/", "dest": "/index.html" }
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
